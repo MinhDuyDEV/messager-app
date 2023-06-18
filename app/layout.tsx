@@ -19,3 +19,6 @@ export default function RootLayout({
     </html>
   );
 }
+// nHDUO5T9VC7aYCel
+// mongodb+srv://minhduydev:<password>@cluster0.vpn5laa.mongodb.net/
+// mongodb+srv://minhduydev:nHDUO5T9VC7aYCel@cluster0.vpn5laa.mongodb.net/messenger-app
