@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import React, { useCallback, useState } from "react";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 import Input from "./Input";
@@ -33,6 +34,7 @@ const AuthForm = () => {
     setIsLoading(true);
     if (variant == "REGISTER") {
       // Axios Register
+      axios.post("/api/register", data);
     }
     if (variant === "LOGIN") {
       // NextAuth SignIn
@@ -45,7 +47,7 @@ const AuthForm = () => {
   };
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+      <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
             <Input
@@ -83,13 +85,13 @@ const AuthForm = () => {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
             </div>
-            <div className="relative flex justify-center items-center text-sm">
-              <span className="bg-white px-2 text-gray-500">
+            <div className="relative flex items-center justify-center text-sm">
+              <span className="px-2 text-gray-500 bg-white">
                 Or continue with
               </span>
             </div>
           </div>
-          <div className="mt-6 flex gap-2">
+          <div className="flex gap-2 mt-6">
             <AuthSocialButton
               icon={BsGithub}
               onclick={() => socialAction("github")}
@@ -100,7 +102,7 @@ const AuthForm = () => {
             ></AuthSocialButton>
           </div>
         </div>
-        <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
+        <div className="flex justify-center gap-2 px-2 mt-6 text-sm text-gray-500">
           <div>
             {variant === "LOGIN"
               ? "New to Messenger?"
