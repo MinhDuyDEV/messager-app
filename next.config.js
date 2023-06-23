@@ -9,7 +9,7 @@ const nextConfig = {
       "source.unsplash.com",
       "lh3.googleusercontent.com",
       "avatars.githubusercontent.com",
-      "res.cloundinary.com",
+      "res.cloudinary.com",
     ],
     formats: ["image/webp"],
   },

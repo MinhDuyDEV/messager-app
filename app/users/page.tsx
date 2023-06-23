@@ -7,7 +7,6 @@ const UsersPage = () => {
   return (
     <div className="hidden h-full lg:block lg:pl-80">
       <EmptyState></EmptyState>
-      <button onClick={() => signOut()}>Sign out</button>
     </div>
   );
 };
